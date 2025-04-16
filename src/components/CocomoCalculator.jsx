@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import CostFactors from './CostFactors';
-import ResultsDisplay from './ResultsDisplay';
+import { CostFactors } from './CostFactors';
+import { ResultsDisplay } from './ResultsDisplay';
 import '../App.css';
 
-const CocomoCalculator = () => {
+export const CocomoCalculator = () => {
   
   const constants = {
     organic: { a: 2.4, b: 1.05, c: 2.5, d: 0.38 },
@@ -118,81 +118,95 @@ const CocomoCalculator = () => {
   };
 
   return (
-    <div className="calculator-container">
-      <div className="input-section">
-        <h2>Parámetros del Proyecto</h2>
+    <div className="max-w-7xl mx-auto p-5 flex flex-col gap-8">
+      <div className="bg-white rounded-xl shadow-soft p-6">
+        <h2 className="text-2xl font-semibold text-secondary mb-4">Parámetros del Proyecto</h2>
         
-        <div className="form-group">
-          <label>
-            Tamaño del proyecto (KLOC):
-            <input 
-              type="number" 
-              value={kloc} 
-              onChange={(e) => setKloc(parseFloat(e.target.value))} 
-              min="1" 
-              step="0.1"
-            />
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label>
-            Modo de desarrollo:
-            <select value={mode} onChange={(e) => setMode(e.target.value)}>
-              <option value="organic">Orgánico</option>
-              <option value="semidetached">Semilibre</option>
-              <option value="embedded">Rígido</option>
-            </select>
-          </label>
-        </div>
-
-        <div className="form-group">
-          <label>
-            Tipo de cálculo:
-            <select value={calculationType} onChange={(e) => setCalculationType(e.target.value)}>
-              <option value="teamSize">Calcular duración basada en equipo</option>
-              <option value="duration">Calcular equipo basado en duración</option>
-            </select>
-          </label>
-        </div>
-
-        {calculationType === 'teamSize' ? (
+        <div className="space-y-4">
           <div className="form-group">
-            <label>
-              Tamaño del equipo:
+            <label className="block font-semibold mb-1">
+              Tamaño del proyecto (KLOC):
               <input 
                 type="number" 
-                value={teamSize} 
-                onChange={(e) => setTeamSize(parseInt(e.target.value))} 
-                min="1"
+                value={kloc} 
+                onChange={(e) => setKloc(parseFloat(e.target.value))} 
+                min="1" 
+                step="0.1"
+                className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
               />
             </label>
           </div>
-        ) : (
+
           <div className="form-group">
-            <label>
-              Duración deseada (meses):
+            <label className="block font-semibold mb-1">
+              Modo de desarrollo:
+              <select 
+                value={mode} 
+                onChange={(e) => setMode(e.target.value)}
+                className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
+              >
+                <option value="organic">Orgánico</option>
+                <option value="semidetached">Semilibre</option>
+                <option value="embedded">Rígido</option>
+              </select>
+            </label>
+          </div>
+
+          <div className="form-group">
+            <label className="block font-semibold mb-1">
+              Tipo de cálculo:
+              <select 
+                value={calculationType} 
+                onChange={(e) => setCalculationType(e.target.value)}
+                className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
+              >
+                <option value="teamSize">Calcular duración basada en equipo</option>
+                <option value="duration">Calcular equipo basado en duración</option>
+              </select>
+            </label>
+          </div>
+
+          {calculationType === 'teamSize' ? (
+            <div className="form-group">
+              <label className="block font-semibold mb-1">
+                Tamaño del equipo:
+                <input 
+                  type="number" 
+                  value={teamSize} 
+                  onChange={(e) => setTeamSize(parseInt(e.target.value))} 
+                  min="1"
+                  className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
+                />
+              </label>
+            </div>
+          ) : (
+            <div className="form-group">
+              <label className="block font-semibold mb-1">
+                Duración deseada (meses):
+                <input 
+                  type="number" 
+                  value={desiredDuration} 
+                  onChange={(e) => setDesiredDuration(parseInt(e.target.value))} 
+                  min="1"
+                  className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
+                />
+              </label>
+            </div>
+          )}
+
+          <div className="form-group">
+            <label className="block font-semibold mb-1">
+              Salario mensual promedio (USD):
               <input 
                 type="number" 
-                value={desiredDuration} 
-                onChange={(e) => setDesiredDuration(parseInt(e.target.value))} 
-                min="1"
+                value={averageSalary} 
+                onChange={(e) => setAverageSalary(parseFloat(e.target.value))} 
+                min="0"
+                step="100"
+                className="w-full p-2.5 mt-1 text-base rounded-md border border-gray-300"
               />
             </label>
           </div>
-        )}
-
-        <div className="form-group">
-          <label>
-            Salario mensual promedio (USD):
-            <input 
-              type="number" 
-              value={averageSalary} 
-              onChange={(e) => setAverageSalary(parseFloat(e.target.value))} 
-              min="0"
-              step="100"
-            />
-          </label>
         </div>
       </div>
 
@@ -202,7 +216,10 @@ const CocomoCalculator = () => {
         onFactorChange={handleFactorChange} 
       />
 
-      <button className="calculate-button" onClick={calculateEffort}>
+      <button 
+        className="bg-blue-900 font-semibold hover:bg-blue-800 text-white text-lg py-3 px-5 rounded-lg transition-colors duration-300 self-center"
+        onClick={calculateEffort}
+      >
         Calcular Estimación
       </button>
 
@@ -211,4 +228,3 @@ const CocomoCalculator = () => {
   );
 };
 
-export default CocomoCalculator;

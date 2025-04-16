@@ -1,18 +1,19 @@
 import React from 'react';
-import CocomoCalculator from './components/CocomoCalculator';
-import './App.css';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Home } from './page/home/Home';
+import Developers from './page/developers/Developers.jsx';
+import { Documentation } from './page/documentation/Documentation';
+import { Application } from './page/application/Application.jsx';
 
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>COCOMO 81 - Modelo Intermedio</h1>
-      </header>
-      <main>
-        <CocomoCalculator />
-      </main>
-    </div>
+    <>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/developers" element={<Developers />} />
+          <Route path="/document" element={<Documentation />} />
+          <Route path="/application" element={<Application />} />
+        </Routes>
+    </>
   );
-}
-
-export default App;
+};
