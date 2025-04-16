@@ -5,7 +5,7 @@ import ImgJose from '../../assets/jose.jpeg';
 import ImgJoan from '../../assets/joan.jpeg';
 import GitHub from '../../assets/GitHub2.jpg';
 
-const Developers = () => {
+export const Developers = () => {
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Header title="Desarrolladores" />
@@ -44,5 +44,4 @@ const Developers = () => {
     </div>
   );
 };
-
-export default Developers; 
+ 
