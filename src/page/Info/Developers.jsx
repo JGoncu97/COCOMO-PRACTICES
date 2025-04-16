@@ -6,6 +6,7 @@ import { Header } from '../../components/header/Header';
 import { Footer } from '../../components/footer/Footer';
 
 export const Developers = () => {
+  // Descripción del Proyecto:
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Header title="Desarrolladores" />
