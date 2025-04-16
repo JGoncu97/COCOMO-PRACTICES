@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../../components/Header/header';
+import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import ImgJose from '../../assets/jose.jpeg';
 import ImgJoan from '../../assets/joan.jpeg';
