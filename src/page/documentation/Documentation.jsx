@@ -1,6 +1,6 @@
 import React from 'react'
 import { Header } from '../../components/header/header'
-import { Footer } from '../../components/footer/Footer'
+import { Footer } from '../../components/footer/footer'
 import ImgProblema from '../../assets/Problema a resolver.png'
 
 export const Documentation = () => {

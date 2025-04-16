@@ -1,6 +1,6 @@
 import React from 'react';
 import { Header } from '../../components/header/header';
-import { Footer } from '../../components/footer/Footer';
+import { Footer } from '../../components/footer/footer';
 import ImgJose from '../../assets/jose.jpeg';
 import ImgJoan from '../../assets/joan.jpeg';
 import GitHub from '../../assets/GitHub2.jpg';
