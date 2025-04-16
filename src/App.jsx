@@ -1,8 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Home } from './page/home/Home';
-import { Documentation } from './page/documentation/Documentation';
-import { Application } from './page/application/Application.jsx';
+import { Home } from './page/Home/Home.jsx';
+import { Documentation } from './page/Documentation/Documentation.jsx';
+import { Application } from './page/Application/Application.jsx';
 import { Developers } from './page/Info/Developers.jsx';
 
 
