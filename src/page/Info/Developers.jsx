@@ -1,9 +1,9 @@
 import React from 'react';
-import { Header } from '../../components/header/header';
-import { Footer } from '../../components/footer/footer';
 import ImgJose from '../../assets/jose.jpeg';
 import ImgJoan from '../../assets/joan.jpeg';
 import GitHub from '../../assets/GitHub2.jpg';
+import { Header } from '../../components/header/Header';
+import { Footer } from '../../components/footer/Footer';
 
 export const Developers = () => {
   return (

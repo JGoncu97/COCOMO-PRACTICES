@@ -1,7 +1,8 @@
 import React from 'react'
 import { CocomoCalculator } from '../../components/CocomoCalculator'
-import { Header } from '../../components/header'
-import { Footer } from '../../components/footer/footer'
+import { Header } from '../../components/header/Header'
+import { Footer } from '../../components/footer/Footer'
+
 
 
 export const Application = () => {

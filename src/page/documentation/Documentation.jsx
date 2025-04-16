@@ -1,7 +1,7 @@
 import React from 'react'
-import { Header } from '../../components/header/header'
-import { Footer } from '../../components/footer/footer'
 import ImgProblema from '../../assets/Problema a resolver.png'
+import { Header } from '../../components/header/Header'
+import { Footer } from '../../components/footer/Footer'
 
 export const Documentation = () => {
   return (
