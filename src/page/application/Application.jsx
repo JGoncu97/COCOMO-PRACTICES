@@ -1,6 +1,6 @@
 import React from 'react'
 import { CocomoCalculator } from '../../components/CocomoCalculator'
-import {Header} from '../../components/header/header'
+import { Header } from '../../components/header'
 import { Footer } from '../../components/footer/footer'
 
 
