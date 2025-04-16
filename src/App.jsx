@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Home } from './page/home/Home';
-import Developers from './page/developers/Developers.jsx';
+import {Developers} from './page/developers/Developers.jsx';
 import { Documentation } from './page/documentation/Documentation';
 import { Application } from './page/application/Application.jsx';
 
